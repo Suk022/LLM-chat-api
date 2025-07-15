@@ -90,7 +90,7 @@ pytest
   - Open Postman and create a new `POST` request.
   - Set the request URL to your deployed API, e.g.:
      ```
-     https://promptcue-llm-chat-api.onrender.com//chat
+     https://promptcue-llm-chat-api.onrender.com/chat
      ```
   - Go to the "Body" tab, select "raw" and choose "JSON" as the format.
   - Enter the following JSON (choose either model):
