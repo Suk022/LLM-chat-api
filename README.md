@@ -69,12 +69,12 @@ pytest
 
 ## For Evaluator
 
-- **Public API URL:** [https://your-app-name.onrender.com](https://your-app-name.onrender.com)  
+- **Public API URL:** [https://your-app-name.onrender.com](https://promptcue-llm-chat-api.onrender.com/)  
 - **Supported models:** "mistral" and "llama"
 - **How to test:**
 
   - Use the interactive Swagger UI at `/docs`:
-  [https://your-app-name.onrender.com/docs](https://your-app-name.onrender.com/docs)
+  [https://your-app-name.onrender.com/docs](https://promptcue-llm-chat-api.onrender.com/docs)
   
   - Use the `/chat` endpoint with a POST request. The `model` field must be either `"mistral"` or `"llama"` (not both):
   ```json
@@ -90,7 +90,7 @@ pytest
   - Open Postman and create a new `POST` request.
   - Set the request URL to your deployed API, e.g.:
      ```
-     https://promptcue-llm-chat-api.onrender.com/chat
+     https://promptcue-llm-chat-api.onrender.com//chat
      ```
   - Go to the "Body" tab, select "raw" and choose "JSON" as the format.
   - Enter the following JSON (choose either model):
