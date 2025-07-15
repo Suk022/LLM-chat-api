@@ -74,7 +74,7 @@ pytest
 - **How to test:**
 
   - Use the interactive Swagger UI at `/docs`:
-  https://promptcue-llm-chat-api.onrender.com/docs/](https://promptcue-llm-chat-api.onrender.com/docs)
+  [https://promptcue-llm-chat-api.onrender.com/docs/](https://promptcue-llm-chat-api.onrender.com/docs/)
   
   - Use the `/chat` endpoint with a POST request. The `model` field must be either `"mistral"` or `"llama"` (not both):
   ```json
