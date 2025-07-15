@@ -1,5 +1,4 @@
 # Multi-Model LLM Chat Service Backend
-
 This project is a minimal FastAPI service that lets you chat with two open-source LLMs (Mistral-7B and Llama-3.1-8B Instruct) via OpenRouter.ai. It supports model switching, logs latency and token counts, and persists logs in a CSV file.
 
 ## Features
@@ -68,26 +67,43 @@ pytest
 ```
 - Runs simple tests for the health and chat endpoints.
 
-## Notes
-- Only two open-source models are supported: `mistralai/mistral-7b-instruct` and `meta-llama/llama-3.1-8b-instruct`.
-
----
-
-## For Evaluator/Recruiter
+## For Evaluator
 
 - **Public API URL:** [https://your-app-name.onrender.com](https://your-app-name.onrender.com)  
-  (Replace with the actual Render deployment URL)
 - **Supported models:** "mistral" and "llama"
 - **How to test:**
-  - Use the `/chat` endpoint with a POST request:
-    ```json
-    {
-      "prompt": "Hello, who are you?",
-      "model": "mistral/llama"
-    }
-    ```
-  - Or use the interactive Swagger UI at `/docs`:
-    [https://your-app-name.onrender.com/docs](https://your-app-name.onrender.com/docs)
+
+  - Use the interactive Swagger UI at `/docs`:
+  [https://your-app-name.onrender.com/docs](https://your-app-name.onrender.com/docs)
+  
+  - Use the `/chat` endpoint with a POST request. The `model` field must be either `"mistral"` or `"llama"` (not both):
+  ```json
+  {
+    "prompt": "Hello, who are you?",
+    "model": "mistral"
+  }
+  ```
+
+
+  ### Testing with Postman
+
+  - Open Postman and create a new `POST` request.
+  - Set the request URL to your deployed API, e.g.:
+     ```
+     https://promptcue-llm-chat-api.onrender.com/chat
+     ```
+  - Go to the "Body" tab, select "raw" and choose "JSON" as the format.
+  - Enter the following JSON (choose either model):
+     ```json
+     {
+       "prompt": "Hello, who are you?",
+       "model": "mistral"
+     }
+     ```
+  - Click "Send".
+  - You should receive a JSON response with the model's reply, latency, token counts, etc.
+
+  You can also use the `/docs` endpoint in your browser for interactive API testing.
 - **No local setup required.**
 - **Logs:** All interactions are logged to `chat_logs.csv` (available in the repo after running a few prompts).
 
@@ -96,15 +112,6 @@ pytest
 
 The `chat_logs.csv` file records every interaction with the chat service, capturing key metrics for both supported models (`mistral` and `llama`).
 
-### What is Logged?
-Each row in `chat_logs.csv` contains:
-- **timestamp**: When the interaction occurred (UTC)
-- **model**: Which model was used (`mistral` or `llama`)
-- **prompt**: The user’s input
-- **response**: The model’s reply
-- **latency**: Time taken to get a response (in seconds)
-- **prompt_tokens**: Number of tokens (words) in the prompt
-- **response_tokens**: Number of tokens (words) in the response
 
 ### Sample Log Entries
 
@@ -121,3 +128,12 @@ Each row in `chat_logs.csv` contains:
 - **Token Counts:** Both prompt and response token counts are recorded, showing the system’s ability to track usage.
 - **Prompt Variety:** The log demonstrates the system’s versatility with a range of prompt types.
 
+## Deployment Note
+
+This project is hosted on Render's free tier.  
+To conserve resources, Render puts the server to sleep after 15 minutes of inactivity.  
+As a result, the **first request may take 30–60 seconds** while the server "spins up" (cold start).  
+Subsequent requests will respond quickly.
+
+If you experience a delay, please wait a moment — the server is waking up.  
+Thank you for your patience!
