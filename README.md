@@ -69,12 +69,12 @@ pytest
 
 ## For Evaluator
 
-- **Public API URL:** [https://your-app-name.onrender.com](https://promptcue-llm-chat-api.onrender.com/)  
+- **Public API URL:** [https://promptcue-llm-chat-api.onrender.com/](https://promptcue-llm-chat-api.onrender.com/)  
 - **Supported models:** "mistral" and "llama"
 - **How to test:**
 
   - Use the interactive Swagger UI at `/docs`:
-  [https://your-app-name.onrender.com/docs](https://promptcue-llm-chat-api.onrender.com/docs)
+  https://promptcue-llm-chat-api.onrender.com/docs/](https://promptcue-llm-chat-api.onrender.com/docs)
   
   - Use the `/chat` endpoint with a POST request. The `model` field must be either `"mistral"` or `"llama"` (not both):
   ```json
