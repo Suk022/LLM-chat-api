@@ -17,6 +17,10 @@ class ChatRequest(BaseModel):
     prompt: str
     model: str
 
+@app.get("/")
+def root():
+    return {"message": "LLM Chat API is running. See /docs for API documentation."}
+
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
