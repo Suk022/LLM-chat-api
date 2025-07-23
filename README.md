@@ -67,7 +67,7 @@ pytest
 ```
 - Runs simple tests for the health and chat endpoints.
 
-## For Evaluator
+## Usage
 
 - **Public API URL:** [https://promptcue-llm-chat-api.onrender.com/](https://promptcue-llm-chat-api.onrender.com/)  
 - **Supported models:** "mistral" and "llama"
