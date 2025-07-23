@@ -67,46 +67,6 @@ pytest
 ```
 - Runs simple tests for the health and chat endpoints.
 
-## Usage
-
-- **Public API URL:** [https://promptcue-llm-chat-api.onrender.com/](https://promptcue-llm-chat-api.onrender.com/)  
-- **Supported models:** "mistral" and "llama"
-- **How to test:**
-
-  - Use the interactive Swagger UI at `/docs`:
-  [https://promptcue-llm-chat-api.onrender.com/docs/](https://promptcue-llm-chat-api.onrender.com/docs/)
-  
-  - Use the `/chat` endpoint with a POST request. The `model` field must be either `"mistral"` or `"llama"` (not both):
-  ```json
-  {
-    "prompt": "Hello, who are you?",
-    "model": "mistral"
-  }
-  ```
-
-
-  ### Testing with Postman
-
-  - Open Postman and create a new `POST` request.
-  - Set the request URL to your deployed API, e.g.:
-     ```
-     https://promptcue-llm-chat-api.onrender.com/chat
-     ```
-  - Go to the "Body" tab, select "raw" and choose "JSON" as the format.
-  - Enter the following JSON (choose either model):
-     ```json
-     {
-       "prompt": "Hello, who are you?",
-       "model": "mistral"
-     }
-     ```
-  - Click "Send".
-  - You should receive a JSON response with the model's reply, latency, token counts, etc.
-
-  You can also use the `/docs` endpoint in your browser for interactive API testing.
-- **No local setup required.**
-- **Logs:** All interactions are logged to `chat_logs.csv` (available in the repo after running a few prompts).
-
 
 ## Example Log Analysis
 
