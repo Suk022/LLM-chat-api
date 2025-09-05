@@ -16,25 +16,25 @@ This project is a minimal FastAPI service that lets you chat with two open-sourc
 ## Setup
 1. **Clone the repo**
 2. **Install dependencies**
-   ```bash
+```bash
    pip install -r requirements.txt
-   ```
+```
 3. **Set up environment variables**
-   - Create a `.env` file in the project root:
-     ```
-     OPENROUTER_API_KEY=your_openrouter_api_key_here
-     ```
    - Get your key from [https://openrouter.ai/](https://openrouter.ai/)
-
+   - Create a .env file in the project root:
+```bash
+   OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
+   
 ## Running the Service
 ```bash
-uvicorn main:app --reload
+   uvicorn main:app --reload
 ```
 - The API will be available at `http://127.0.0.1:8000`
 
 ## API Usage
 ### Health Check
-```http
+   ```http
 GET /health
 ```
 - Returns `{ "status": "ok" }`
